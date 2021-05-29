@@ -10,34 +10,289 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+   <link rel="stylesheet" href="index.css">
+   
+   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title>React App</title>
   </head>
+  <script>
+    // ======MENU SHOW=======
+const showMenu = (toggleId,navId) => {
+  const toggle = document.getElementById(toggleId),
+  nav = document.getElementById(navId)
+
+
+
+  if(toggle && nav){
+      toggle.addEventListener('click',()=>{
+          nav.classList.toggle("show")
+      })
+  }
+}
+
+showMenu('nav-toggle','nav-menu')
+
+const navLink = document.querySelectorAll('.nav__link')
+
+function linkAction(){
+  navLink.forEach(n => n.classList.remove('active'))
+  this.classList.add('active')
+
+  
+  const navMenu = document.getElementById('nav-menu')
+  navMenu.classList.remove('show')
+}
+
+navLink.forEach(n => n.addEventListener('click',linkAction))
+
+
+  </script>
+
   <body>
+    <link rel="stylesheet" href="../src/index.css">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div id="root"></div> 
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+
+                        <!-- --------HEADER---------->
+                        <header class="l-header">
+                          <nav class="nav bd-grid">
+                            <div>
+                              <a href="#" class="nav__logo">Aditya</a>
+                            </div>
+                            
+                            <div class="nav__menu" id="nav-menu">
+                              <ul class="nav__list">
+                                <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
+                                <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                                <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                                <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                                <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                              </ul>
+                            </div>
+
+                            <div class="nav__toggle" id="nav-toggle">
+                              <i class="bx bx-menu"></i>
+                            </div>
+
+                          </nav>
+                        </header>
+
+                        <main class="l-main">
+
+                          <!-- ======HOME===== -->
+
+                          <section class="home bd-grid id="name>
+                            <div class="home__data">
+                              <h1 class="home__title">Hi,<br> I'am <span class="home__title-color"> Aditya Sharma</span><br>Web Developer</h1>
+                              <a href="#contact" class="button">Contact</a>
+                            </div>
+
+                            <div class="home__social">
+                              <a href="https://www.linkedin.com/in/aditya-sharma-45473a1a6/" class="home__social-icon"><i class='bx bxl-linkedin' ></i></a>
+                              <a href="https://github.com/AdityaSharma224" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                              <a href="#" class="home__social-icon"><i class='bx bxl-gitlab'></i></a>
+                            </div>
+
+                            <div class="home__img">
+                              <img src="myImg.jpg" alt="">
+                            </div>
+                          </section>
+
+                          <!-- ======ABOUT===== -->
+
+                          <section class="about section" id="about">
+                            <h2 class="section-title">About</h2>
+
+                            <div class="about__container bd-grid">
+                                <div class="about__img">
+                                  <img src="img2.jpg" alt="">
+                                </div>
+
+                                <div>
+                                  <h2  class="about__subtitle">I'am Aditya Sharma</h2>
+                                  <p class="about__text">I'am doing my bachelor in Computer Science and Engg. from Chitkara University,punjab. I'am passionate coder love's to develop front-end applications and practicing Data Structures & Algorithms. Also familier with (Java and Python) </p>
+                                </div>
+                              </div>
+                            </section>
+
+                            <!-- ======SKILLS===== -->
+
+                            <section clas="skills section" id="skills">
+                              <h2 class="section-title">Skills</h2>
+
+                              <div class="skills__container bd-grid">
+                                <div>
+                                  <h2 class="skills__subtitle">Professional Skills</h2>
+                                  <p class="skills__text"></p>
+
+
+                                  <div class="skills__data">
+                                    <div class="skills__names">
+                                      <i class='bx bxl-html5 skills__icon' ></i>
+                                      <span class="skills__name">HTML5</span>
+                                    </div>
+
+                                    <div>
+                                      <span class="skills__percentage">95%</span>
+                                    </div>
+
+                                    <div class="skills__bar skills__html"></div>
+                                  </div>
+
+                                  <div class="skills__data">
+                                    <div class="skills__names">
+                                      <i class='bx bxl-css3 skills__icon' ></i>
+                                      <span class="skills__name">CSS3</span>
+                                    </div>
+
+                                    <div>
+                                      <span class="skills__percentage">80%</span>
+                                    </div>
+
+                                    <div class="skills__bar skills__css"></div>
+                                  </div>
+
+                                  <div class="skills__data">
+                                    <div class="skills__names">
+                                      <i class='bx bxl-javascript skills__icon' ></i>
+                                      <span class="skills__name">JavaScript</span>
+                                    </div>
+
+                                    <div>
+                                      <span class="skills__percentage">60%</span>
+                                    </div>
+
+                                    <div class="skills__bar skills__js"></div>
+                                  </div>
+
+                                  <div class="skills__data">
+                                    <div class="skills__names">
+                                      <i class='bx bxl-c-plus-plus skills__icon'></i>
+                                      <span class="skills__name">C++</span>
+                                    </div>
+
+                                    <div>
+                                      <span class="skills__percentage">75%</span>
+                                    </div>
+
+                                    <div class="skills__bar skills__cpp"></div>
+                                  </div>
+
+                                  <div class="skills__data">
+                                    <div class="skills__names">
+                                      <i class='bx bxl-react skills__icon' ></i>
+                                      <span class="skills__name">React</span>
+                                    </div>
+
+                                    <div>
+                                      <span class="skills__percentage">50%</span>
+                                    </div>
+
+                                    <div class="skills__bar skills__react"></div>
+                                  </div>
+
+                                  <div class="skills__data">
+                                    <div class="skills__names">
+                                      <i class='bx bxl-python skills__icon' ></i>
+                                      <span class="skills__name">Python</span>
+                                    </div>
+
+                                    <div>
+                                      <span class="skills__percentage">50%</span>
+                                    </div>
+
+                                    <div class="skills__bar skills__python"></div>
+                                  </div>
+                                </div>
+
+                                <div>
+                                  <img src="img1.svg" alt="" class="skills__img">
+                                </div>
+                            </div>
+                          </section>
+
+
+
+                          <!-- ======WORK===== -->
+
+                          <section class="work section" id="work">
+                            <h2 class="section-title">Work</h2>
+
+                            <div class="work__container bd-grid">
+                              <div class="work__img">
+                                <img src="work1.jfif" alt="">
+                              </div>
+
+                              <div class="work__img">
+                                <img src="work2.jfif" alt="">
+                              </div>
+
+                              <div class="work__img">
+                                <img src="work3.jfif" alt="">
+                              </div>
+
+                              <div class="work__img">
+                                <img src="work4.jpg" alt="">
+                              </div>
+
+                              <div class="work__img">
+                                <img src="work5.jpg" alt="">
+                              </div>
+
+                              <div class="work__img">
+                                <img src="work6.jpg" alt="">
+                              </div>
+
+                            </div>
+                          </section>
+
+                          <!-- ======CONTACT===== -->
+                        
+                          <section class="contact section" id="contact">
+                            <h2 class="section-title">Contact</h2>
+
+                            <div class="contact__container bd-grid">
+                              <form action="" class="contact__form">
+                                <input type="text" placeholder="Name" class="contact__input">
+                                <input type="mail" placeholder="Email" class="contact__input">
+                                <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                              
+                                <input type="button" value="Enivar" class="contact__button button">
+                              </form>
+                            </div>
+                          </section>
+                          
+                        </main>  
+
+
+
+                        <!---------FOOTER---------->
+                        <footer class="footer">
+                          <p class="footer__title">Aditya</p>
+
+                          <div class="footer__social">
+                            <a href="#" class="footer icon"><i class='bx bxl-instagram' ></i></a>
+                            <a href="#" class="footer icon"><i class='bx bxl-facebook' ></i></a>
+                            <a href="#" class="footer icon"><i class='bx bxl-twitter' ></i></a>
+                          </div>
+
+                          <p>&#169; 2021 cpyright all right reserved</p>
+                        </footer>
+                        
+                        
+
+                         <!-- ----------SCROLL REVEAL-------- -->
+                         <script src="https://unpkg.com/scrollreveal"></script>
+                         
+
+
+
+                         <!-- -------------MAIN JS----------- -->
+                         <script src="../src/index.js"></script>
+  </body> 
 </html>
