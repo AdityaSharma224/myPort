@@ -258,8 +258,9 @@ navLink.forEach(n => n.addEventListener('click',linkAction))
 
                             <div class="contact__container bd-grid">
                               <form action="https://formsubmit.co/sharmaaditya13064@gmail.com" method="POST" class="contact__form">
-                                <input type="text" name="name" placeholder="Name" class="contact__input">
-                                <input type="email" name="email" placeholder="Email" class="contact__input">
+                                <input type="text" name="name" placeholder="Name" class="contact__input" required>
+                                <input type="email" name="email" placeholder="Email" class="contact__input" required>
+                                <input type="number" name="number" placeholder="Phone number" class="contact__input">
                                 <textarea type="message" name="message" id="" cols="0" rows="10" class="contact__input"></textarea>
                               
                                 <input type="submit" value="Submit" class="contact__button button">
